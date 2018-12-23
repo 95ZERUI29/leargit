@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+*{margin:0px;
+padding:0px;}
+ul{
+list-style:none;
+}
+body{
+font-family:"微软雅黑";
+color:#14191e;
+}
+
+.main{
+width:520px;
+height:280px;
+margin:30px auto;
+overflow:hidden;
+}
+.banner{
+width:520px;
+height:280px;
+overflow:hidden;
+position:relative;
+}
+.banner-slide{
+width:520px;
+height:280px;
+background-repeat:no-repeat;
+position:absolute;/*相对于baanner定位*/
+display:none;
+}
+
+
+.slide1{
+background-image:url("../test image/image1.jpg");/*之所以不用background是为了避免覆盖掉上面的不平铺属性*/
+}
+.slide2{
+background-image:url("../test image/image2.jpg");
+}
+.slide3{
+background-image:url("../test image/image3.jpg");
+}
+.slide-active{
+display:block;
+}
+
+.button{
+position:absolute;
+width:40px;
+height:80px;
+top:35%;
+left:423px;
+margin-top:-80px;/*确保居中*/
+
+}
+.next{
+left:auto;/*先于right起作用*/
+right:423px;
+}
+.button:hover{
+background-color:#333;
+opacity:0.6;
+filter:alpha(opacity=60);
+}
+
+.dots{
+position:absolute;
+right:450px;
+top:280px;
+text-align:right;
+}
+.dots span{
+display:inline-block;
+width:12px;
+height:12px;
+border-radius:50%;/*?*/
+box-shadow:0 0 0 2px rgba(255,255,255,0.8) inset;
+margin-left:8px;
+line-height:12px;
+cursor:pointer;
+}
+.dots span.active{
+box-shadow:0 0 0 2px rgba(7,17, 27,0.4) inset;
+background:#fff;
+}
+</style>
+<title>无标题文档</title>
+</head>
+<body>
+<div class="main"id="main">
+    
+	<div class="banner" id="banner">
+	<a href=""><div class="banner-slide slide1 slide-active"></div></a>
+	<a href=""><div class="banner-slide slide2"></div></a>
+    <a href=""><div class="banner-slide slide3" ></div></a>
+    </div>
+<!--上下按钮-->
+<a href="javascript:void(0)" class="button prev" id="next"></a>
+<a href="javascript:void(0)" class="button next" id="prev"></a>
+<!--原点按钮-->
+<div class="dots" id="dots">
+  <span class="active"></span>
+  <span></span>
+  <span></span>
+</div>
+
+</div>
+</body>
+<script type="text/javascript">
+	function Byid(id){
+	return typeof(id)==="string"? document.getElementById(id):id;
+	}
+	var index=0;
+	var timer=null;
+	var next=Byid("next");
+	var prev=Byid("prev");
+	var dots=Byid("dots").getElementsByTagName("span");
+	var pics=Byid("banner").getElementsByTagName("div");
+	var len=pics.length;
+
+	function slideImg(){
+	var main1=Byid("main");
+	//滑过清除定时器，离开继续
+	main1.onmouseover = function(){
+	if(timer){clearInterval(timer);
+	}
+	}
+	//滑过清除定时器
+	main1.onmouseout =function(){
+	timer = setInterval(function(){
+	index++;
+	if(index >= len){
+	index=0;}
+	//切换图片
+	changeImg();
+	},3000)
+	}
+	main1.onmouseout();
+	//遍历所有点击，且绑定点击事件，点击切换图片
+	for(var d=0;d<len;d++){
+	//添加id作为当前span索引
+	dots[d].id=d;
+	dots[d].onclick = function(){
+	//改变index为当前span索引
+	index=this.id
+	changeImg();
+	}
+	}
+	//下一张,上一张。
+	next.onclick = function(){
+	index++;
+	if(index >= len){
+	index=1;}
+	changeImg();
+	}
+	prev.onclick = function(){
+	index--;
+	if(index < 0){
+	index=2;}
+	changeImg();
+	}
+	}
+	
+	function changeImg(){
+	for(var i=0;i<len;i++){
+	pics[i].style.display='none';
+	dots[i].className=""
+	}
+	//根据index将界面显示出来
+	pics[index].style.display= 'block';
+	dots[index].className="active";
+	}
+	
+	slideImg();
+	</script>
+	</html>
