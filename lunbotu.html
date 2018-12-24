@@ -11,7 +11,8 @@ body{
 font-family:"微软雅黑";
 color:#14191e;
 }
-
+a{
+text-decoration:none;}
 .main{
 width:520px;
 height:280px;
@@ -85,20 +86,317 @@ cursor:pointer;
 box-shadow:0 0 0 2px rgba(7,17, 27,0.4) inset;
 background:#fff;
 }
+/*导航菜单*/
+.menu-box{
+width:160px;
+height:280px;
+position:absolute;
+left:263px;
+top:30px;
+background:rgba(7,17,27,0.5);
+opacity:0.5;
+z-index:1;
+}
+.menu-content{
+height:274px;
+width:160px;
+position:absolute;
+left:263px;
+top:30px;
+padding-top:6px;
+z-index:2;
+}
+.menu-item{
+height:40px;
+line-height:36px;
+font-size:15px;
+padding:0 20px;
+position:relative;
+}
+.menu-item a:hover,.menu-item a:active{
+color:#fff;
+}
+.menu-item a{
+color:black;
+display:block;
+border-bottom:1px solid rgba(255,255,255,0.5);
+padding:0 8px;
+}
+.menu-item i{
+position:absolute;
+right:32px;
+font-size:20px;
+top:2px;
+font-family:iconfont;
+font-weight:normal;
+font-style:normal;
+color:rgba(255,255,255,0.7);
+}
+/*子菜单*/
+.sub-menu{
+width:350px;
+height:280px;
+border:1px solid #d9dde1;
+background:#fff;
+position:absolute;
+left:423px;
+top:30px;
+z-index:9;
+box-shadow:0 4px 8px 0 rgba(0,0,0,0.1);
+}
+.inner-box{
+width:100%;
+height:100%;
+background:url("../test image/bg1.jpg") no-repeat;
+}
+.sub-inner-box{
+width:320px;
+height:260px;
+margin-left:20px;
+margin-top:5px;
+overflow:hidden;
+}
+.tilte{
+color:red;
+font-size:16px;
+line-height:16px;
+font-weight:bold;
+margin-bottom:20px;
+margin-top:10px;
+}
+.sub-row{
+margin-bottom:15px;
+}
+.bold{
+font-weight:bold;
+}
+.mr10{
+margin-right:7px;
+margin-left:7px;}
+.hide{
+display:none;
+}
+.sub-row a span{
+color:#cccccc;
+font-size:12px;
+}
 </style>
 <title>无标题文档</title>
 </head>
 <body>
 <div class="main"id="main">
-    
+<!--子菜单-->
+<div class="sub-menu hide" id="sub-menu">
+<div class="inner-box">
+<div class="sub-inner-box"><!--内部文字框-->
+<div class="tilte">手机 配件</div>
+<div class="sub-row">
+<span class="bold">手机通讯:&nbsp;&nbsp;<span>
+<a href=""><span>手机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机维修</span></a>
+<span class="mr10">/</span>
+<a href=""><span>以旧换新</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">手机配件:&nbsp;&nbsp;<span>
+<a href=""><span>手机壳</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机存储卡</span></a>
+<span class="mr10">/</span>
+<a href=""><span>数据线</span></a>
+<span class="mr10">/</span>
+<a href=""><span>充电器</span></a>
+<span class="mr10">/</span>
+<a href=""><span>电池</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">运营商:&nbsp;&nbsp;<span>
+<a href=""><span>中国联通</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国移动</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国电信</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">娱乐:&nbsp;&nbsp;<span>
+<a href=""><span>耳机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>音响</span></a>
+<span class="mr10">/</span>
+<a href=""><span>收音机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>麦克风</span></a>
+</div>
+</div>
+</div>
+<div class="inner-box">
+<div class="sub-inner-box"><!--内部文字框-->
+<div class="tilte">电脑</div>
+<div class="sub-row">
+<span class="bold">手机通讯:&nbsp;&nbsp;<span>
+<a href=""><span>手机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机维修</span></a>
+<span class="mr10">/</span>
+<a href=""><span>以旧换新</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">手机配件:&nbsp;&nbsp;<span>
+<a href=""><span>手机壳</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机存储卡</span></a>
+<span class="mr10">/</span>
+<a href=""><span>数据线</span></a>
+<span class="mr10">/</span>
+<a href=""><span>充电器</span></a>
+<span class="mr10">/</span>
+<a href=""><span>电池</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">运营商:&nbsp;&nbsp;<span>
+<a href=""><span>中国联通</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国移动</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国电信</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">娱乐:&nbsp;&nbsp;<span>
+<a href=""><span>耳机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>音响</span></a>
+<span class="mr10">/</span>
+<a href=""><span>收音机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>麦克风</span></a>
+</div>
+</div>
+</div>
+<div class="inner-box">
+<div class="sub-inner-box"><!--内部文字框-->
+<div class="tilte">家用电器</div>
+<div class="sub-row">
+<span class="bold">手机通讯:&nbsp;&nbsp;<span>
+<a href=""><span>手机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机维修</span></a>
+<span class="mr10">/</span>
+<a href=""><span>以旧换新</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">手机配件:&nbsp;&nbsp;<span>
+<a href=""><span>手机壳</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机存储卡</span></a>
+<span class="mr10">/</span>
+<a href=""><span>数据线</span></a>
+<span class="mr10">/</span>
+<a href=""><span>充电器</span></a>
+<span class="mr10">/</span>
+<a href=""><span>电池</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">运营商:&nbsp;&nbsp;<span>
+<a href=""><span>中国联通</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国移动</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国电信</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">娱乐:&nbsp;&nbsp;<span>
+<a href=""><span>耳机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>音响</span></a>
+<span class="mr10">/</span>
+<a href=""><span>收音机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>麦克风</span></a>
+</div>
+</div>
+</div>
+<div class="inner-box">
+<div class="sub-inner-box"><!--内部文字框-->
+<div class="tilte">家具</div>
+<div class="sub-row">
+<span class="bold">手机通讯:&nbsp;&nbsp;<span>
+<a href=""><span>手机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机维修</span></a>
+<span class="mr10">/</span>
+<a href=""><span>以旧换新</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">手机配件:&nbsp;&nbsp;<span>
+<a href=""><span>手机壳</span></a>
+<span class="mr10">/</span>
+<a href=""><span>手机存储卡</span></a>
+<span class="mr10">/</span>
+<a href=""><span>数据线</span></a>
+<span class="mr10">/</span>
+<a href=""><span>充电器</span></a>
+<span class="mr10">/</span>
+<a href=""><span>电池</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">运营商:&nbsp;&nbsp;<span>
+<a href=""><span>中国联通</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国移动</span></a>
+<span class="mr10">/</span>
+<a href=""><span>中国电信</span></a>
+</div>
+<div class="sub-row">
+<span class="bold">娱乐:&nbsp;&nbsp;<span>
+<a href=""><span>耳机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>音响</span></a>
+<span class="mr10">/</span>
+<a href=""><span>收音机</span></a>
+<span class="mr10">/</span>
+<a href=""><span>麦克风</span></a>
+</div>
+</div>
+</div>
+</div>
+<!--主菜单-->
+   <div class="menu-box"></div>
+   <div class="menu-content" id="menu-content"><!--再次采用一个盒子的目的是menubox已经定义了透明度如果在上面鞋子会透明，所以另外起一个界面-->
+   <div class="menu-item">
+   <a href="">
+   <span>手机配件</span>
+   <i></i>
+   </a>
+   </div>
+   <div class="menu-item">
+   <a href="">
+   <span>电脑</span>
+   <i></i>
+   </a>
+   </div>
+   <div class="menu-item">
+   <a href="">
+   <span>家用电器</span>
+   <i></i>
+   </a>
+   </div>
+   <div class="menu-item">
+   <a href="">
+   <span>家具</span>
+   <i></i>
+   </a>
+   </div>
+   </div>
+    <!--焦点图-->
 	<div class="banner" id="banner">
 	<a href=""><div class="banner-slide slide1 slide-active"></div></a>
 	<a href=""><div class="banner-slide slide2"></div></a>
     <a href=""><div class="banner-slide slide3" ></div></a>
     </div>
 <!--上下按钮-->
-<a href="javascript:void(0)" class="button prev" id="next"></a>
-<a href="javascript:void(0)" class="button next" id="prev"></a>
+<a href="javascript:void(0)" class="button next" id="next"></a>
+<a href="javascript:void(0)" class="button prev" id="prev"></a>
 <!--原点按钮-->
 <div class="dots" id="dots">
   <span class="active"></span>
@@ -119,14 +417,18 @@ background:#fff;
 	var dots=Byid("dots").getElementsByTagName("span");
 	var pics=Byid("banner").getElementsByTagName("div");
 	var len=pics.length;
-
+	var menu=Byid("menu-content");
+	var item=menu.getElementsByClassName("menu-item");
+	var subnum=Byid("sub-menu");
+    var inbox=subnum.getElementsByClassName("inner-box");
+	
 	function slideImg(){
 	var main1=Byid("main");
 	//滑过清除定时器，离开继续
 	main1.onmouseover = function(){
-	if(timer){clearInterval(timer);
+	if(timer){clearInterval(timer);}
 	}
-	}
+	
 	//滑过清除定时器
 	main1.onmouseout =function(){
 	timer = setInterval(function(){
@@ -137,6 +439,7 @@ background:#fff;
 	changeImg();
 	},3000)
 	}
+	
 	main1.onmouseout();
 	//遍历所有点击，且绑定点击事件，点击切换图片
 	for(var d=0;d<len;d++){
@@ -148,11 +451,12 @@ background:#fff;
 	changeImg();
 	}
 	}
+	
 	//下一张,上一张。
 	next.onclick = function(){
 	index++;
 	if(index >= len){
-	index=1;}
+	index=0;}
 	changeImg();
 	}
 	prev.onclick = function(){
@@ -160,6 +464,28 @@ background:#fff;
 	if(index < 0){
 	index=2;}
 	changeImg();
+	}
+	
+	//实现滑过时显示子菜单
+	for(var n=0;n < item.length;n++){
+	item[n].setAttribute("data-foo",n);
+	}
+	for(var d=0;d <item.length;d++){
+	item[d].onmouseover=function(){
+	  for(var m=0;m < item.length;m++){
+	  inbox[m].style.display="none";}
+	  
+	var idx=this.getAttribute("data-foo");
+	subnum.className="sub-menu";
+	inbox[idx].style.display="block";
+	}
+	}
+	menu.onmouseout=function(){
+	subnum.className="sub-menu hide";
+	}
+	subnum.onmouseover=function(){
+	subnum.className="sub-menu";
+	inbox[idx].style.display="block";
 	}
 	}
 	
