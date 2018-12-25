@@ -2,22 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <style>
+/*公用设置*/
 *{margin:0px;
 padding:0px;}
-ul{
-list-style:none;
-}
-body{
-font-family:"微软雅黑";
-color:#14191e;
-}
-a{
-text-decoration:none;}
-/*主菜单栏*/
+ul{list-style:none;}
+body{font-family:"微软雅黑";
+color:#14191e;}
+a{text-decoration:none;}
+	
+/*主背景*/
 .main{
 width:520px;
 height:280px;
-margin:30px auto;
+margin:30px auto;/*设置大背景，之所以不直接用该框架作为背景目的是为了方便后续的菜单的定位，使用auto实现居中，30为距离顶部和下部距离*/
 overflow:hidden;
 }
 /*焦点图*/
@@ -25,7 +22,7 @@ overflow:hidden;
 width:520px;
 height:280px;
 overflow:hidden;
-position:relative;
+position:relative;/*定位是为了给后续的框架指定父元素*/
 }
 .banner-slide{
 width:520px;
@@ -34,32 +31,25 @@ background-repeat:no-repeat;
 position:absolute;/*相对于baanner定位*/
 display:none;
 }
-
-
 .slide1{
-background-image:url("../test image/image1.jpg");/*之所以不用background是为了避免覆盖掉上面的不平铺属性*/
-}
+background-image:url("../test image/image1.jpg");/*之所以不用background是为了避免覆盖掉上面的不平铺属性*/}
 .slide2{
-background-image:url("../test image/image2.jpg");
-}
+background-image:url("../test image/image2.jpg");}
 .slide3{
-background-image:url("../test image/image3.jpg");
-}
+background-image:url("../test image/image3.jpg");}
 .slide-active{
-display:block;
-}
-
+display:block;}/*只让有该类的背景图片显示*/
+/*左右滑动菜单*/
 .button{
-position:absolute;
 width:40px;
 height:80px;
+position:absolute;/*相对于html根元素定位*/
 top:35%;
 left:423px;
-margin-top:-80px;/*确保居中*/
-
+margin-top:-80px;/*由于向下百分之35了，通过margin实现上移确保居中。个人认为可以直接通过top来上移*/
 }
 .next{
-left:auto;/*先于right起作用*/
+left:auto;/*先于right起作用，必须设置left的目的是若不设置则left会被button的类覆盖，从而使right不起作用*/
 right:423px;
 }
 .button:hover{
@@ -67,38 +57,39 @@ background-color:#333;
 opacity:0.6;
 filter:alpha(opacity=60);
 }
-
+/*定位小圆点*/
 .dots{
-position:absolute;
+position:absolute;/*相对于html定位*/
 right:450px;
 top:280px;
-text-align:right;
+text-align:right;/*框架内部偏右*/
 }
 .dots span{
 display:inline-block;
 width:12px;
 height:12px;
-border-radius:50%;/*?*/
-box-shadow:0 0 0 2px rgba(255,255,255,0.8) inset;
+border-radius:50%;/*实现圆点效果，这时圆点还无法显示，缺乏背景色*/
+box-shadow:0 0 0 2px rgba(255,255,255,0.8) inset;/*添加边框颜色，实现圆点透明效果*/
 margin-left:8px;
 line-height:12px;
 cursor:pointer;
 }
 .dots span.active{
-box-shadow:0 0 0 2px rgba(7,17, 27,0.4) inset;
-background:#fff;
+box-shadow:0 0 0 2px rgba(7,17, 27,0.4) inset;/*实现黑色效果*/
+background:#fff;/*实现圆点背景纯白效果，从而显示出被选中状态*/
 }
 /*导航菜单*/
 .menu-box{
 width:160px;
 height:280px;
-position:absolute;
+position:absolute;/*相对于html定位*/
 left:263px;
 top:30px;
 background:rgba(7,17,27,0.5);
 opacity:0.5;
 z-index:1;
 }
+/*大文字框*/
 .menu-content{
 height:274px;
 width:160px;
@@ -108,6 +99,7 @@ top:30px;
 padding-top:6px;
 z-index:2;
 }
+/*每行文字框*/
 .menu-item{
 height:40px;
 line-height:36px;
@@ -125,37 +117,39 @@ border-bottom:1px solid rgba(255,255,255,0.5);
 padding:0 8px;
 }
 .menu-item i{
-position:absolute;
+position:absolute;/*相对于menu-item文字框定位*/
 right:32px;
-font-size:20px;
 top:2px;
+font-size:20px;
 font-family:iconfont;
-font-weight:normal;
-font-style:normal;
+font-weight:normal;/*不实现粗体*/
+font-style:normal;/*不实现斜体*/
 color:rgba(255,255,255,0.7);
 }
-/*子菜单*/
+/*子菜单样式 外围框架单独独立有利于JS的背景切换，在鼠标滑过不同的目录时不需要重复加载，同时隐藏该框架可隐藏全部子菜单*/
 .sub-menu{
 width:350px;
 height:280px;
 border:1px solid #d9dde1;
 background:#fff;
-position:absolute;
+position:absolute;/*相对于html文档*/
 left:423px;
 top:30px;
 z-index:9;
 box-shadow:0 4px 8px 0 rgba(0,0,0,0.1);
 }
+/*用于设置背景*/
 .inner-box{
 width:100%;
 height:100%;
 background:url("../test image/bg1.jpg") no-repeat;
 }
+/*内部主要的文字框*/
 .sub-inner-box{
 width:320px;
 height:260px;
 margin-left:20px;
-margin-top:5px;
+margin-top:15px;
 overflow:hidden;
 }
 .tilte{
@@ -164,7 +158,6 @@ font-size:16px;
 line-height:16px;
 font-weight:bold;
 margin-bottom:20px;
-margin-top:10px;
 }
 .sub-row{
 margin-bottom:15px;
@@ -178,6 +171,7 @@ margin-left:7px;}
 .hide{
 display:none;
 }
+/*设置小字部分的字体样式*/
 .sub-row a span{
 color:#cccccc;
 font-size:12px;
@@ -185,6 +179,8 @@ font-size:12px;
 </style>
 <title>无标题文档</title>
 </head>
+	
+	
 <body>
 <div class="main"id="main">
 <!--子菜单-->
@@ -391,10 +387,10 @@ font-size:12px;
    </div>
    </div>
     <!--焦点图-->
-	<div class="banner" id="banner">
+    <div class="banner" id="banner">
 	<a href=""><div class="banner-slide slide1 slide-active"></div></a>
 	<a href=""><div class="banner-slide slide2"></div></a>
-    <a href=""><div class="banner-slide slide3" ></div></a>
+        <a href=""><div class="banner-slide slide3" ></div></a>
     </div>
 <!--上下按钮-->
 <a href="javascript:void(0)" class="button next" id="next"></a>
@@ -408,6 +404,8 @@ font-size:12px;
 
 </div>
 </body>
+	
+	
 <script type="text/javascript">
 	function Byid(id){
 	return typeof(id)==="string"? document.getElementById(id):id;
@@ -422,7 +420,7 @@ font-size:12px;
 	var menu=Byid("menu-content");
 	var item=menu.getElementsByClassName("menu-item");
 	var subnum=Byid("sub-menu");
-    var inbox=subnum.getElementsByClassName("inner-box");
+        var inbox=subnum.getElementsByClassName("inner-box");
 	
 	function slideImg(){
 	var main1=Byid("main");
@@ -469,33 +467,28 @@ font-size:12px;
 	}
 	
 	//实现滑过时显示子菜单
-	for(var n=0;n < item.length;n++){
-	item[n].setAttribute("data-foo",n);
-	}
 	for(var d=0;d <item.length;d++){
+	item[d].setAttribute("data-foo",d);
 	item[d].onmouseover=function(){
 	  for(var m=0;m < item.length;m++){
 	  inbox[m].style.display="none";}
-	  
 	var idx=this.getAttribute("data-foo");
 	subnum.className="sub-menu";
 	inbox[idx].style.display="block";
 	}
 	}
 	menu.onmouseout=function(){
-	subnum.className="sub-menu hide";
-	}
+	subnum.className="sub-menu hide";}
+		
 	subnum.onmouseover=function(){
 	subnum.className="sub-menu";
-	inbox[idx].style.display="block";
-	}
+	inbox[idx].style.display="block";}
 	}
 	
 	function changeImg(){
 	for(var i=0;i<len;i++){
 	pics[i].style.display='none';
-	dots[i].className=""
-	}
+	dots[i].className=""}
 	//根据index将界面显示出来
 	pics[index].style.display= 'block';
 	dots[index].className="active";
@@ -503,4 +496,5 @@ font-size:12px;
 	
 	slideImg();
 	</script>
+	
 	</html>
